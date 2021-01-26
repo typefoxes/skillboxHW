@@ -29,7 +29,7 @@
                                 </constraints>
                                 <state key="normal" title="Задание 3"/>
                                 <connections>
-                                    <action selector="task3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kK9-OQ-bfi"/>
+                                    <action selector="task3" destination="BYZ-38-t0r" eventType="touchUpInside" id="UpR-Sc-B3g"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-R3-jgb">
@@ -39,7 +39,7 @@
                                 </constraints>
                                 <state key="normal" title="Задание 4"/>
                                 <connections>
-                                    <action selector="task4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cM7-1P-U3B"/>
+                                    <action selector="task4" destination="BYZ-38-t0r" eventType="touchUpInside" id="N9m-Ka-G4s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xQ-5m-Bah">
@@ -49,7 +49,7 @@
                                 </constraints>
                                 <state key="normal" title="Задание 5"/>
                                 <connections>
-                                    <action selector="task5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YOz-ga-At7"/>
+                                    <action selector="task5" destination="BYZ-38-t0r" eventType="touchUpInside" id="1at-JE-zfa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqo-wZ-Det">
@@ -59,7 +59,7 @@
                                 </constraints>
                                 <state key="normal" title="Задание 6"/>
                                 <connections>
-                                    <action selector="task6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kam-sf-jqy"/>
+                                    <action selector="task6" destination="BYZ-38-t0r" eventType="touchUpInside" id="NVi-O6-w45"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tL2-Wc-a7x">
@@ -69,20 +69,20 @@
                                 </constraints>
                                 <state key="normal" title="Задание 7"/>
                                 <connections>
-                                    <action selector="task7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAK-tW-fPT"/>
+                                    <action selector="task7" destination="BYZ-38-t0r" eventType="touchUpInside" id="yh3-gg-mPI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEK-RI-veY">
                                 <rect key="frame" x="170" y="433" width="74" height="30"/>
                                 <state key="normal" title="Задание 8"/>
                                 <connections>
-                                    <action selector="task8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ySV-es-sR4"/>
+                                    <action selector="task8" destination="BYZ-38-t0r" eventType="touchUpInside" id="SGB-wR-Sb0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-K0-HKu">
                                 <rect key="frame" x="192" y="483" width="30" height="30"/>
                                 <connections>
-                                    <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DcO-0s-b0Q"/>
+                                    <action selector="clearButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="jG9-JX-ZKF"/>
                                 </connections>
                             </button>
                         </subviews>
