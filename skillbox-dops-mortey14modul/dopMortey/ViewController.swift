@@ -4,7 +4,6 @@ import RealmSwift
 
 class ViewController: UIViewController {
 
- 
     @IBOutlet weak var collectionView: UICollectionView!
     
     let realm = try! Realm()
@@ -18,16 +17,6 @@ class ViewController: UIViewController {
     var currentPage = 1
     var isLoading = false
 
-
-//    func save(data: Object){
-//            do{
-//                try! realm.write{
-//                     realm.add(data)
-//                }
-//            } catch {
-//                       print("Error saving data: \(error)")
-//                   }
-//           }
     func loadData(page: Int) {
         let session = URLSession.shared
         let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(page)")!
@@ -41,13 +30,17 @@ class ViewController: UIViewController {
             let morteyDataAll: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
             DispatchQueue.main.async {
                 if self.currentPage <= 34 && self.currentPage != 35 {
-    
+                    try! self.realm.write({
+                            let model: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
+                            self.realm.add(model)
+                        })
+                    }
                 self.morteys += morteyDataAll.results
                 self.collectionView.reloadData()
                 self.currentPage += 1
                 }
                 if  self.isLoading == true { self.isLoading = false}
-            }
+            
             
         } catch { print(error.localizedDescription) }
     }

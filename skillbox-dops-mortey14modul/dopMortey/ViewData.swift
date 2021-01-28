@@ -1,39 +1,37 @@
-
 import Foundation
+import RealmSwift
 
-struct MorteyDataAll: Codable {
-    let results: [MorteyData]
+class MorteyDataAll: Object, Codable {
+    var results: List<MorteyData> = List()
+}
+
+class MorteyData: Object, Codable {
+    @objc dynamic var name = ""
+    @objc dynamic var status = ""
+    @objc dynamic var species = ""
+    @objc dynamic var gender = ""
+    @objc dynamic var location = Location()
+    @objc dynamic var image = ""
     
     enum CodingKeys: String, CodingKey {
-        case results = "results"
-      
-}
-}
-struct MorteyData: Codable{
-   
-    struct Location: Codable {
-        let name: String
-            
-        enum CodingKeys: String, CodingKey {
-         case name = "name"
-        }
+        case name = "name"
+        case status = "status"
+        case species = "species"
+        case gender = "gender"
+        case location = "location"
+        case image = "image"
     }
-    let name: String
-    let status: String
-    let species: String
-    let gender: String
-    let location: Location
-    let image: String
-    
+}
+
+class Location: Object, Codable {
+    @objc dynamic var name: String? = ""
+
     enum CodingKeys: String, CodingKey {
-     case name = "name"
-     case status = "status"
-     case species = "species"
-     case gender = "gender"
-     case location = "location"
-     case image = "image"
-        }
+        case name = "name"
     }
+}
+
+    
 class saveIt: Object, Codable {
     @objc dynamic var name = String()
     @objc dynamic var status = String()
