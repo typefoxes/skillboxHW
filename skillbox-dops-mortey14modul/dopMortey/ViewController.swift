@@ -27,14 +27,15 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async {
                         if self.currentPage <= 34 && self.currentPage != 35 {
                             
-                        try! self.realm.write({
-                        let model: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
-                        self.realm.add(model) })
-                        }
-                        self.morteys += morteyDataAll.results
-                        self.collectionView.reloadData()
-                        self.currentPage += 1
-                    }
+                            try! self.realm.write({
+                                let model: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
+                                
+                                self.realm.add(model)
+                                self.morteys += model.results
+                                self.collectionView.reloadData()
+                                self.currentPage += 1
+                            })
+                        }}
                     if  self.isLoading == true { self.isLoading = false }
                 } catch { print(error.localizedDescription) }
             }
@@ -74,7 +75,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         cell.nameLabel.text = mortey.name
         cell.statusLabel.text =  mortey.status
         cell.spiciesLabel.text =  mortey.species
-        // cell.lacationNameLabel.text =  mortey.location.name
+        cell.lacationNameLabel.text =  mortey.location?.name
         cell.genderLabel.text =  mortey.gender
         
         cell.imageView.layer.cornerRadius = 15
@@ -97,5 +98,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         loadImage(from: url)
         return cell
     }
-}
+    private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        performSegue(withIdentifier: "testSegue", sender: indexPath.row)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let UserSelectViewController = storyboard.instantiateViewController(identifier: "UserSelectViewController") as? UserSelectViewController else { return }
+        UserSelectViewController.nameU.placeholder = "Попытка1"
+                
+                show(UserSelectViewController, sender: nil)
+            }
+        }
 
