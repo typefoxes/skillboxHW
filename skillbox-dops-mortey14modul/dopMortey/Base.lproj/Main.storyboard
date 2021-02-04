@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ggP-tx-OoR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUR-uI-Akm">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u8e-6d-wh6">
                                     <size key="itemSize" width="374" height="223"/>
@@ -105,7 +105,6 @@
                                             <outlet property="nameLabel" destination="anD-or-yLl" id="pqZ-6j-Ar3"/>
                                             <outlet property="spiciesLabel" destination="okj-KV-svk" id="hbR-Ig-02J"/>
                                             <outlet property="statusLabel" destination="uji-AI-KTW" id="Eh7-d9-o62"/>
-                                            <segue destination="T8j-Ro-zcf" kind="show" id="d3o-fb-IT8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -124,24 +123,26 @@
                             <constraint firstItem="VUR-uI-Akm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y8p-dL-Ds7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FWL-EV-I6Y"/>
                     <connections>
                         <outlet property="collectionView" destination="VUR-uI-Akm" id="guA-Gy-dEB"/>
+                        <segue destination="T8j-Ro-zcf" kind="show" id="GcF-vu-HFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+            <point key="canvasLocation" x="944.92753623188412" y="93.75"/>
         </scene>
         <!--User Select View Controller-->
         <scene sceneID="NnE-zK-dsu">
             <objects>
                 <viewController storyboardIdentifier="UserSelectViewController" id="T8j-Ro-zcf" customClass="UserSelectViewController" customModule="dopMortey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AWV-h0-cW2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3M1-HS-piM">
-                                <rect key="frame" x="20" y="79" width="374" height="34"/>
+                                <rect key="frame" x="20" y="119" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -150,7 +151,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи гендер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-82-fAA">
-                                <rect key="frame" x="20" y="140" width="374" height="34"/>
+                                <rect key="frame" x="20" y="180" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -159,16 +160,16 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи вид" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swG-L9-h1T">
-                                <rect key="frame" x="20" y="204" width="374" height="34"/>
+                                <rect key="frame" x="20" y="244" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="userSpicies:" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="JjH-zK-gT0"/>
+                                    <action selector="userSpecies:" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="s7Z-ej-P3Y"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи статус" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3W-Ce-AGs">
-                                <rect key="frame" x="20" y="260" width="374" height="34"/>
+                                <rect key="frame" x="20" y="300" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -177,7 +178,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи локацию" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-Xx-fZH">
-                                <rect key="frame" x="20" y="320" width="374" height="34"/>
+                                <rect key="frame" x="20" y="360" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -186,7 +187,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2c-0N-ocA">
-                                <rect key="frame" x="169" y="406" width="77" height="30"/>
+                                <rect key="frame" x="168" y="446" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Сохранить"/>
                                 <connections>
@@ -202,13 +203,31 @@
                         <outlet property="genderU" destination="ydt-82-fAA" id="bfW-CQ-5lf"/>
                         <outlet property="locationU" destination="kWf-Xx-fZH" id="4Rp-Bd-QGE"/>
                         <outlet property="nameU" destination="3M1-HS-piM" id="bjl-8T-cZJ"/>
-                        <outlet property="spiciesU" destination="swG-L9-h1T" id="9fT-FR-Hgc"/>
+                        <outlet property="speciesU" destination="swG-L9-h1T" id="ZRG-sf-uEI"/>
                         <outlet property="statusU" destination="j3W-Ce-AGs" id="cAX-oB-iDB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKn-uG-pb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714.49275362318849" y="95.758928571428569"/>
+            <point key="canvasLocation" x="1624.6376811594205" y="95.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HjR-2T-nzu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ggP-tx-OoR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uUn-Sv-2dt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WcE-6W-8bq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dft-Yu-0Qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
     </scenes>
     <resources>

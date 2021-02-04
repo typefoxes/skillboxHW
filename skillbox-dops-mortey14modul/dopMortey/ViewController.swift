@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     var morteys: [MorteyData] = []
     var images: [UIImage] = []
     var currentPage = 1
-    var isLoading = false
     var refreshControl = UIRefreshControl()
     
     
@@ -22,21 +21,20 @@ class ViewController: UIViewController {
         let task = session.dataTask(with: url) { data, responce, error in
             if let data = data {
                 do {
-                    let morteyDataAll: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
+                   
                     
                     DispatchQueue.main.async {
                         if self.currentPage <= 34 && self.currentPage != 35 {
-                            
+                            let model: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
                             try! self.realm.write({
-                                let model: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
-                                
-                                self.realm.add(model)
-                                self.morteys += model.results
-                                self.collectionView.reloadData()
-                                self.currentPage += 1
+                                 self.realm.add(model)
                             })
-                        }}
-                    if  self.isLoading == true { self.isLoading = false }
+                            self.morteys += model.results
+                            self.collectionView.reloadData()
+                            self.currentPage += 1
+                        }
+                    }
+                   
                 } catch { print(error.localizedDescription) }
             }
         }
@@ -98,13 +96,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         loadImage(from: url)
         return cell
     }
-    private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        performSegue(withIdentifier: "testSegue", sender: indexPath.row)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let UserSelectViewController = storyboard.instantiateViewController(identifier: "UserSelectViewController") as? UserSelectViewController else { return }
-        UserSelectViewController.nameU.placeholder = "Попытка1"
-                
-                show(UserSelectViewController, sender: nil)
-            }
-        }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "UserSelectViewController") as? UserSelectViewController
+        vc?.name = morteys[indexPath.row].name
+        vc?.gender = morteys[indexPath.row].gender
+        vc?.location = morteys[indexPath.row].location?.name ?? "Who knows?"
+        vc?.species = morteys[indexPath.row].species
+        vc?.status = morteys[indexPath.row].status
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+}
 
