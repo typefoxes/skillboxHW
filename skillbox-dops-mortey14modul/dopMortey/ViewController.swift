@@ -8,12 +8,10 @@ class ViewController: UIViewController {
     
     let realm = try! Realm()
     
-    
     var morteys: [MorteyData] = []
     var images: [UIImage] = []
     var currentPage = 1
     var refreshControl = UIRefreshControl()
-    
     
     func loadData(page: Int) {
         let session = URLSession.shared
@@ -21,8 +19,6 @@ class ViewController: UIViewController {
         let task = session.dataTask(with: url) { data, responce, error in
             if let data = data {
                 do {
-                   
-                    
                     DispatchQueue.main.async {
                         if self.currentPage <= 34 && self.currentPage != 35 {
                             let model: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
