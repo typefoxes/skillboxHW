@@ -21,8 +21,17 @@ class UserSelectViewController: UIViewController {
     @IBAction func userSpecies() { try! realm.write { personage?.name = speciesU.text! } }
     @IBAction func userStatus() { try! realm.write { personage?.name = statusU.text! } }
     @IBAction func userLocation() { try! realm.write { personage?.name = locationU.text! } }
-    //@IBAction func saveButton() { try! realm.write { personage?.name = .text! } }
-    
+   
+    @IBAction func saveButton() {
+        func changeName() {
+        personage?.name = nameU.text ?? ""
+    }
+    func save() {
+        try! realm.write {
+            realm.add(personage!, update: .modified)
+        }
+    }
+    }
     @IBOutlet weak var nameU: UITextField!
     @IBOutlet weak var genderU: UITextField!
     @IBOutlet weak var locationU: UITextField!

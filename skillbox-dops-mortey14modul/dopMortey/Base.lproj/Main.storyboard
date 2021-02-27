@@ -146,7 +146,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="userName:" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="cyl-km-Y8I"/>
+                                    <action selector="userName" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="4fR-9p-BpK"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи гендер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-82-fAA">
@@ -154,7 +154,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="userGender:" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="fuq-5G-uXJ"/>
+                                    <action selector="userGender" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="2xm-F0-AfD"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи вид" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swG-L9-h1T">
@@ -162,7 +162,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="userSpecies:" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="s7Z-ej-P3Y"/>
+                                    <action selector="userSpecies" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="70a-0v-k7g"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи статус" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3W-Ce-AGs">
@@ -170,7 +170,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="userStatus:" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="YEM-Ib-mtT"/>
+                                    <action selector="userStatus" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="gRl-eK-kSK"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи локацию" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-Xx-fZH">
@@ -178,14 +178,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="userLocation:" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="jSB-GZ-1Se"/>
+                                    <action selector="userLocation" destination="T8j-Ro-zcf" eventType="editingDidEnd" id="w1W-n6-QkB"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2c-0N-ocA">
                                 <rect key="frame" x="10" y="438" width="394" height="30"/>
                                 <state key="normal" title="Сохранить"/>
                                 <connections>
-                                    <action selector="saveButton:" destination="T8j-Ro-zcf" eventType="touchUpInside" id="cDU-Hf-IzQ"/>
+                                    <action selector="saveButton" destination="T8j-Ro-zcf" eventType="touchUpInside" id="WBk-j6-fGc"/>
                                 </connections>
                             </button>
                         </subviews>
